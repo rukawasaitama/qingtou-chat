@@ -32,7 +32,11 @@ export function CharacterSelector({
                   : "bg-gray-50 text-gray-600 hover:bg-gray-100"
               }`}
             >
-              <span className="text-lg">{char.emoji}</span>
+              {char.avatarUrl ? (
+                <img src={char.avatarUrl} alt={char.name} className="w-5 h-5 rounded-full object-cover" />
+              ) : (
+                <span className="text-lg">{char.emoji}</span>
+              )}
               <span>{char.name}</span>
             </button>
           ))}
@@ -74,10 +78,14 @@ export function CharacterSelector({
               }`}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0 overflow-hidden"
                 style={{ backgroundColor: char.avatarColor + "20" }}
               >
-                {char.emoji}
+                {char.avatarUrl ? (
+                  <img src={char.avatarUrl} alt={char.name} className="w-full h-full object-cover" />
+                ) : (
+                  char.emoji
+                )}
               </div>
               {!isCollapsed && (
                 <div className="min-w-0">

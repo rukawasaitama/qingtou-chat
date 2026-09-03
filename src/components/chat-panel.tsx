@@ -248,10 +248,14 @@ export function ChatPanel({ character }: { character: Character }) {
               {/* Avatar */}
               {msg.role === "assistant" && (
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-lg shrink-0 shadow-sm"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-lg shrink-0 overflow-hidden shadow-sm"
                   style={{ backgroundColor: character.avatarColor + "20" }}
                 >
-                  {character.emoji}
+                  {character.avatarUrl ? (
+                    <img src={character.avatarUrl} alt={character.name} className="w-full h-full object-cover" />
+                  ) : (
+                    character.emoji
+                  )}
                 </div>
               )}
               {/* Bubble */}

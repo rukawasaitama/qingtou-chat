@@ -7,6 +7,7 @@ export interface Character {
   greeting: string;
   systemPrompt: string;
   avatarColor: string;
+  avatarUrl?: string;
 }
 
 export const characters: Character[] = [
@@ -18,6 +19,7 @@ export const characters: Character[] = [
     source: "《在牛肚子里旅行》",
     greeting: "你好呀！我是青头，一只青色的小蟋蟀。今天我们一起聊聊我和红头在牛肚子里的那次旅行吧！你有什么想问我的吗？",
     avatarColor: "#4CAF50",
+    avatarUrl: "/qingtou.png",
     systemPrompt: `你是一只青色的小蟋蟀，名叫"青头"，是小学语文课文《在牛肚子里旅行》中的角色。你现在正在课堂上，面对一群三年级的小学生。
 
 ## 你的性格
@@ -54,6 +56,7 @@ export const characters: Character[] = [
     source: "《在牛肚子里旅行》",
     greeting: "你好！我是红头。你知道吗？我差点被牛吃掉了！幸好有我的好朋友青头帮我。你想听听我的冒险故事吗？",
     avatarColor: "#FF6B6B",
+    avatarUrl: "/hongtou.png",
     systemPrompt: `你是一只红色的小蟋蟀，名叫"红头"，是小学语文课文《在牛肚子里旅行》中的角色。你现在正在课堂上，面对一群三年级的小学生。
 
 ## 你的性格

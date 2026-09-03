@@ -29,7 +29,11 @@ export default function Home() {
             className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm"
             style={{ backgroundColor: selectedCharacter.avatarColor + "15" }}
           >
-            <span>{selectedCharacter.emoji}</span>
+            {selectedCharacter.avatarUrl ? (
+              <img src={selectedCharacter.avatarUrl} alt={selectedCharacter.name} className="w-5 h-5 rounded-full object-cover" />
+            ) : (
+              <span>{selectedCharacter.emoji}</span>
+            )}
             <span className="text-gray-700 font-medium hidden sm:inline">
               {selectedCharacter.name}
             </span>
